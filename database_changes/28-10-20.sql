@@ -1,0 +1,2 @@
+ALTER TABLE `user_dataset` CHANGE `run_status` `run_status` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0=>not run yet, 1=>running fine, 2=>error, 3=>Incorrect Details'; 
+ALTER TABLE `user_dataset` CHANGE `run_status` `run_status` TINYINT(4) NOT NULL DEFAULT '0' COMMENT '0=>not run yet, 1=>running fine, 2=>error, 3=>Incorrect Details, 4=>Reconfiguration/Authentication Required'; 

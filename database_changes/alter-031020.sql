@@ -1,0 +1,1 @@
+ALTER TABLE `teams` CHANGE `plan_id` `plan_id` VARCHAR(10) NOT NULL DEFAULT '0' COMMENT '0 is free trial plan, multiple plan to be stored comma separately'; 

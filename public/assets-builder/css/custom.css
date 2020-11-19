@@ -1,0 +1,242 @@
+.nav > li > a {
+  padding-left:10px;
+}
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+  background-color: transparent;
+  color: white;
+}
+.wrapper.wrapper-content{
+  padding: 10px 0 0;
+}
+#page-wrapper,
+.navbar-default.navbar-static-side{
+  overflow-y: scroll;
+  height: 100vh;
+}
+select{
+  cursor: pointer;
+}
+.fz-8{
+  font-size: 8px;
+  color: #ffffff;
+}
+.chart-div input,
+.chart-div select{
+      border-radius: 5px;
+font-size: 14px;
+color: #111111;
+}
+.chart-div label{
+  color: #ffffff;
+}
+.chart-div .dropdown-toggle::after{
+  display: none;
+}
+.chart-div .p-nav{
+  padding: 14px 20px 14px 10px;
+}
+.chart-div .axis-select select{
+  font-size: 12px;
+  padding: 0 0px 0 5px;
+}
+.chart-div .axis-select select.aa{
+  width: 60px;
+}
+.chart-div .axis-select select.bb{
+  width: 90px;
+}
+.chart-div .axis-select .aaof{
+  color: #ffffff;
+  padding: 0 5px 0;
+  align-self: center;
+}
+.chart-div .axis-select select{
+}
+.chart-div .option{
+  margin-left: 3px;
+  padding: 5px;
+}
+.chart-div .dynamic-axis-append.y-axis-parent-div>div.my-hide-11{
+display: flex !important;
+justify-content: space-between;
+margin-bottom: 5px;
+}
+/*.chart-div .dynamic-axis-append.y-axis-parent-div>div{
+  display: none !important;
+}*/
+.my-show{
+  display:none !important;
+}
+.chart-div .axis-append-div .axis-append-input{
+  display: none;
+  width: 100px;
+  position: absolute;
+  top: auto;
+  left: 10px;
+}
+.chart-div #addXAxisData{
+  display: block;
+}
+/* canavas div */
+.canvas-div {}
+.canvas-div
+.canvas-div
+.canvas-div
+.canvas-div{}
+/* table */
+.canvas-div.row>div,
+.row.chart-table>div{
+  padding-left: 0;
+  padding-right: 0;
+}
+.chart-table{
+margin-bottom: 20px;
+}
+.chart-table{
+  
+}
+.chart-table table th{
+  width: 200px;
+}
+.chart-table table th:first-child{
+width: 30px;
+}
+/*color picker modal*/
+#colorModal{
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    width: 180px;
+    padding: 10px;
+    box-shadow: 0 0 10px -5px #000;
+    transition: all .3s;
+  transform: scale(1);
+
+}
+#colorModal .color-pallet{
+  position: fixed;
+  top: -999999999px;
+  left: -999999999px;
+  opacity: 0;
+  visibility: hidden;
+}
+#colorModal .color-pallet+label{
+      background-color: #FF1A66;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 2px;
+}
+#colorModal #colormod1+label{
+  background-color: #FF1A66;
+}
+#colorModal #colormod2+label{
+  background-color: #991AFF;
+}
+#colorModal #colormod3+label{
+  background-color: #CCFF1A;
+}
+#colorModal #colormod4+label{
+  background-color: #00E680;
+}
+#colorModal #colormod5+label{
+  background-color: #1AFF33;
+}
+#colorModal input:checked+label{
+border-color: #333 !important;
+}
+#colorModal .color-div{
+  display: flex;
+  justify-content: space-between;
+}
+#colorModal .color-div>div{
+display: inline-block;
+}
+#colorModal .color-input{
+  position: relative;
+    border: 1px solid transparent;
+    padding: 0;
+    margin: 0px 0 10px;
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+}
+.modalHide {
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  transform: scale(0.8) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal{}
+.select-y-axis-dropdown {
+  position: relative;
+}
+.select-y-axis-dropdown .dropdown-btn{
+    width: 82px;
+    font-size: 12px;
+    padding: 6px 3px 6px 7px;
+    text-align: left;
+}
+.select-y-axis-dropdown .dropdown-menu{
+width: 120px;
+max-width: 120px;
+min-width: 120px;
+left: auto !important;
+right: 0 !important;
+}
+.select-y-axis-dropdown .dropdown-menu button{
+/*p-1 m-0 border-0 dropdown-item w-100*/
+padding: 6px 10px;
+margin: 0;
+border-width: 0px;
+text-align: left;
+width: 100%;
+border-bottom: 1px solid #666;
+}
+.select-y-axis-dropdown .dropdown-menu button:hover{
+    background: rgb(127 255 0);
+}
+.table-div-shadow{
+  box-shadow:0 0 10px -1px #4b1bff;
+}
+.header-table .aaa{
+  width: 45px !important;
+}
+.table-div-shadow {
+
+}
+th{
+  cursor: pointer;
+}
+th.outline-sel{
+  background: lightgreen !important;
+}
+td.outline-sel{
+  background: #dfffdf !important;
+}
+.table-div-shadow thead:not(.t-title) th{
+background-image: linear-gradient(45deg, #999, #999);
+}
+.btn-tab-11{
+      font-size: 15px;
+    font-weight: 700;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+.ibox-content th.p-0{
+  padding: 0 !important;
+}
+.top-thead{
+  display: none;
+}

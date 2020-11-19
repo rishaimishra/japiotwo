@@ -1,0 +1,1 @@
+ALTER TABLE `user_connectors` CHANGE `connection_status` `connection_status` TINYINT(4) NOT NULL COMMENT '0->Connection In progress, 1->Active, data is successfully being fetched from API, 2->Error fetching the data from API';

@@ -1,0 +1,791 @@
+.navbar-static-side {
+  width: 300px;
+}
+
+.nav > li > a {
+  padding-left: 10px;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+  background-color: transparent;
+  color: white;
+}
+
+.wrapper.wrapper-content {
+  padding: 10px 0 0;
+}
+
+#page-wrapper,
+.navbar-default.navbar-static-side {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+/* resposivew side bar */
+.top-head {
+  display: none;
+}
+
+@media only screen and (max-width:500px) {
+  .top-head {
+    font-size: 20px;
+    display: flex;
+    justify-content: start;
+    color: #2f4050;
+  }
+
+  .top-head a {
+    font-weight: 700;
+    margin-left: 10px;
+  }
+
+  .top-head .btn-menu {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .builder-wrap .nav-hide-overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000038;
+    transition: all 0s;
+    z-index: 9;
+  }
+
+  .builder-wrap .nav-hide-overlay.show1 {
+    display: block;
+  }
+
+  .builder-wrap {
+    display: block;
+  }
+
+  .builder-nav {
+    width: 0 !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2f4050;
+  }
+
+  .builder-nav.show1 {
+    width: 80% !important;
+  }
+
+  .nav-hide-overlay {
+  }
+
+}
+
+/* resposivew side bar */
+select {
+  cursor: pointer;
+}
+
+.fz-8 {
+  font-size: 8px;
+  color: #ffffff;
+}
+
+.chart-div input,
+.chart-div select {
+  color: #111111;
+  padding: 6px 10px !important;
+  height: auto;
+  border-radius: 3px;
+}
+
+.chart-title {
+  font-size: 16px;
+}
+
+.chart-description {
+  font-size: 12px;
+}
+
+.chart-div .form-group {
+  margin-bottom: 5px;
+}
+
+.chart-div label {
+  color: #ffffff;
+}
+
+.chart-div .dropdown-toggle::after {
+  display: none;
+}
+
+.chart-div .p-nav {
+  padding: 14px 20px 14px 10px;
+}
+
+.chart-div .axis-select select {
+  font-size: 12px;
+  padding: 0 0px 0 5px;
+}
+
+.chart-div .axis-select select.aa {
+  width: 60px;
+  font-size: 12px;
+  padding: 0 6px !important;
+}
+
+.chart-div .axis-select select.bb {
+
+  /* width: 90px; */
+}
+
+.aaof {
+  color: #ffffff;
+  padding: 0 5px 0;
+  align-self: center;
+}
+
+#sidePanel1 .aaof {
+  /* color: #111; */
+}
+
+.chart-div .axis-select select {
+}
+
+/*axis dropdown*/
+.chart-div .dropdown-div1 {
+  position: relative;
+}
+
+/*axis dropdown*/
+.chart-div .option {
+  margin-left: 3px;
+  padding: 5px;
+}
+
+.chart-div .dynamic-axis-append.y-axis-parent-div > div.my-hide-11 {
+  display: flex !important;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+/*.chart-div .dynamic-axis-append.y-axis-parent-div>div{
+display: none !important;
+}*/
+.my-show {
+  display: none !important;
+}
+
+.chart-div .axis-append-div .axis-append-input {
+  display: none;
+  width: 100px;
+  position: absolute;
+  top: auto;
+  left: 10px;
+}
+
+.chart-div #addXAxisData {
+  display: block;
+}
+
+/* canavas div */
+.canvas-div {
+}
+
+.canvas-div .canvas-div .canvas-div .canvas-div {
+}
+
+/* table */
+.canvas-div.row > div,
+.row.chart-table > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chart-table {
+  margin-bottom: 0;
+}
+
+.chart-table .ibox {
+  margin-bottom: 0;
+}
+
+.chart-table table th {
+  width: 200px;
+}
+
+.chart-table table th:first-child {
+  width: 30px;
+}
+.chart-table th,
+.chart-table td{
+  font-size: 12px;
+}
+
+/*color picker modal*/
+#colorModal {
+}
+
+#colorModal .color-pallet {
+  position: fixed;
+  top: -999999999px;
+  left: -999999999px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#colorModal .color-pallet + label {
+  background-color: #ff1a66;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid #ddd;
+  border-radius: 2px;
+}
+
+#colorModal #colormod1 + label {
+  background-color: #ff1a66;
+}
+
+#colorModal #colormod2 + label {
+  background-color: #991aff;
+}
+
+#colorModal #colormod3 + label {
+  background-color: #ccff1a;
+}
+
+#colorModal #colormod4 + label {
+  background-color: #00e680;
+}
+
+#colorModal #colormod5 + label {
+  background-color: #1aff33;
+}
+
+#colorModal input:checked + label {
+  border-color: #333 !important;
+}
+
+#colorModal .color-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#colorModal .color-div > div {
+  display: inline-block;
+}
+
+#colorModal .color-input {
+  position: relative;
+  margin: 0px 0 10px;
+  width: 100%;
+  height: 30px;
+  padding: 3px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid #b9b9b9;
+}
+
+.modalHide {
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;  /*transform: scale(0.8) !important;*/
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+#colorModal .card {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  width: 180px;
+  transition: all 0.3s;
+  transform: scale(1);
+  padding: 10px;
+  box-shadow: 0 0 10px -5px #000;
+}
+
+#colorModal.modalHide .card {
+  position: fixed;
+  top: -70px;
+  left: -70px;
+  width: 0;
+  transition: all 0.3s;
+  transform: scale(0.8);
+}
+
+div .overlay-color-modal {
+  display: block;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000014;
+  transition: all 0s;
+}
+
+div.modalHide .overlay-color-modal {
+  display: none;
+}
+
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal
+#colorModal {
+}
+
+.select-y-axis-dropdown {
+  position: relative;
+}
+
+.select-y-axis-dropdown .dropdown-btn {
+  width: 82px;
+  font-size: 12px;
+  padding: 6px 3px 6px 7px;
+  text-align: left;
+}
+
+.select-y-axis-dropdown .dropdown-menu {
+  width: 120px;
+  max-width: 120px;
+  min-width: 120px;
+  left: auto !important;
+  right: 0 !important;
+}
+
+.select-y-axis-dropdown .dropdown-menu button {
+
+  /*p-1 m-0 border-0 dropdown-item w-100*/
+  padding: 6px 10px;
+  margin: 0;
+  border-width: 0px;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #666;
+}
+
+.select-y-axis-dropdown .dropdown-menu button:hover {
+  background: rgb(127 255 0);
+}
+
+.table-div-shadow {
+  box-shadow: 0 0 10px -1px #4b1bff;
+}
+.table-div.table-responsive{
+  height: 300px;
+}
+
+.header-table .aaa {
+  width: 45px !important;
+}
+
+.table-div-shadow {
+}
+
+th {
+  cursor: pointer;
+}
+
+th.outline-sel {
+  background: lightgreen !important;
+}
+
+td.outline-sel {
+  background: #dfffdf !important;
+}
+
+.table-div-shadow thead:not(.t-title) th {
+  background-image: linear-gradient(45deg, #999, #999);
+}
+
+.btn-tab-11 {
+  font-size: 15px;
+  font-weight: 700;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.ibox-content th.p-0 {
+  padding: 0 !important;
+}
+
+.top-thead {
+  display: none;
+}
+
+/*header*/
+.page-heading {
+  padding: 6px 0px;
+}
+
+.page-heading .btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.chart-container {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-container > div {
+  height: 50vh !important;
+}
+
+.overlay-btn {
+}
+
+/* .btn-info {
+color: #fff;
+background-color: #b41617;
+border-color: #b41617;
+} */
+.dropdown-axis {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.dropdown-axis button {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.dropdown-axis button span {
+}
+
+.dropdown-axis .svg1 {
+  font-size: 9px;
+}
+
+.dropdown-axis input {
+  border-color: transparent !important;
+  font-size: 12px;
+}
+
+.dropdown-axis .dropdown-divider {
+  margin: 0px 0 5px;
+}
+
+.dropdown-axis .dropdown-menu {
+  padding-bottom: 5px;
+}
+
+.dropdown-axis a {
+  display: block;
+  font-size: 12px;
+  padding: 3px 10px;
+  color: #111;
+  border-bottom: 1px solid #0001;
+}
+
+input.input-field1 {
+  border-radius: 2px;
+  height: 33px;
+  font-size: 14px;
+  margin-left: 3px;
+}
+
+/*.dropdown-axis .dropdown-menu:not(:hover) .drow-item1.selected,*/
+.dropdown-axis a:hover {
+  background: #31b2c7;
+  color: #fff;
+}
+
+.dropdown-axis .selected {
+  background: #17a2b8;
+  color: #fff;
+}
+
+.date-range-dropdown {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+/* expansion panel */
+#sidePanel1 .collapse.show {
+  display: block;
+}
+
+#sidePanel1 .card-header {
+  border-width: 0;
+  padding: 0;
+}
+
+#sidePanel1 .card-header button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* expansion panel */
+
+/* chart default background */
+.chart-d-bg {
+  background-image: url(../img/default-chart.png);
+  background-size: 30% 100%;
+  background-position: bottom;
+  background-repeat: repeat;
+  position: relative;
+}
+
+.chart-d-bg .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.chart-d-bg .add-d-yaxis {
+}
+
+.chart-d-bg .d-yaxis-line {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 87%;
+  background: #b41718;
+  z-index: 0;
+}
+
+.chart-d-bg .add-d-xaxis {
+  top: auto;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.chart-d-bg .d-xaxis-line {
+  position: absolute;
+  top: auto;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 90%;
+  background: #b41718;
+  z-index: 0;
+}
+
+.chart-d-bg .btn:hover+span {
+  background: #dc3545;
+}
+
+.hide-items1>button,
+.hide-items1>.my-span1 {
+  display: none !important;
+}
+
+.my-table2 {
+  padding: 0;
+}
+
+.table-div.table-responsive::-webkit-scrollbar {
+  height: 10px;
+}
+
+.first-dropdown-open {
+  left: auto;
+  right: -20px;
+}
+
+.dropdown-menu h5 {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0 0 0 9px;
+}
+
+.date-range-dropdown .dropdown-divider {
+  margin: 0;
+}
+
+.dropdown-menu {
+  box-shadow: 0 0 10px -3px #000000;
+}
+
+/*accordion*/
+#sidePanel1 {
+      margin: 0 -10px;
+}
+
+#sidePanel1 .svg1 {
+  font-size: 9px;
+  align-self: center;
+}
+
+#sidePanel1 .btn-header-filter:not(.collapsed) .svg1 {
+  transform: rotate(90deg);
+}
+
+#sidePanel1 .card {
+  overflow: visible;
+  background: transparent;
+  /*border-width: 0;*/
+}
+
+#sidePanel1 .btn-header-filter {
+  color: #fff;
+  /*padding: 5px 0;*/
+  /*border-width: 0;*/
+}
+#sidePanel1 .btn-header-filter:not(.collapsed),
+#sidePanel1 .card div.collapse {
+background: #203244;
+}
+#sidePanel1 .card-body {
+    /*padding: 5px 0;*/
+}
+#sidePanel1 .card-body .form-group>label{
+    font-size: 12px;
+    color: #ddd;
+}
+#sidePanel1 .card-body button {
+  /*border-color: #b41617;*/
+}
+.filter-dropdown-div{
+  position: relative;
+  margin-bottom: 5px;
+}
+.filter-dropdown-btn{
+      width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-drop-card{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    display: none;
+    width: 100%;
+    z-index: 1;
+padding: 10px 10px;
+background: #fff;
+box-shadow: 0 0 10px -3px #000000;
+border-radius: 5px;
+}
+
+.filter-drop-card .filter-d-c-btn{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+}
+.search-input-mb{
+      border-color: transparent !important;
+    font-size: 12px;
+    color: #111111;
+    padding: 6px 10px !important;
+    height: auto;
+    border-radius: 3px;
+}
+/*.dropdown-axis .dropdown-menu:not(:hover) .drow-item1.selected,*/
+.filter-drop-card .dropdown-menu a,
+.drow-item1 {
+  display: block;
+  font-size: 12px;
+  padding: 3px 10px;
+  color: #111;
+  border-bottom: 1px solid #0001;
+}
+.filter-drop-card .dropdown-menu a:hover,
+.drow-item1:hover {
+  background: #31b2c7;
+  color: #fff;
+}
+
+.drow-item1.selected {
+  background: #17a2b8;
+  color: #fff;
+}
+.chart-container > div.my-spinner {
+  height: auto !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+}
+.my-spinner .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.my-spinner .lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #b41617;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #b41617 transparent transparent transparent;
+}
+.my-spinner .lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.my-spinner .lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.my-spinner .lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.disabled:hover{
+  background: #e2e2e2!important;
+  color: #a79d9d!important;
+  cursor:not-allowed;
+}
+
+
+
+div#Xvalues {
+  top: 40px !important;
+}
+/* key values */
+#key_value_show{
+  padding: 8px 15px 5px;
+  margin-bottom: -10px;
+  background: #fff;
+}
+#key_value_show h3{
+  font-size: 18px;
+  margin: 0 0 2px;
+font-weight: 700;
+color: #222;
+}
+#key_value_show span{
+  font-size: 12px;
+  font-weight: 700;
+}
+.canvas-div .ibox {
+  margin-bottom: 0;
+}
