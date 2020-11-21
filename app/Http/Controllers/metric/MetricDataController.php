@@ -206,6 +206,8 @@ class MetricDataController extends Controller
             $xAxisData = $request->xAxisData;
             $yAxisData = $request->yAxisData;
             $dateRange = $request->dateRange;
+            $filter = $request->filter;
+            $sortBy = $request->sortBy;
             // $formattedData = TransformDataHelper::filter($r);
             $authId = Auth::user()->id;
             // $authId = 13;
@@ -245,11 +247,32 @@ class MetricDataController extends Controller
                 $where .= " WHERE $dateRangeFilter ";
             }
 
+            // Filter
+            if($filter){
+                $filterValue = $filter['value'];
+                $filterColumnName = $filter['columnName'];
+                $filterCompareOperator = $filter['compareOperator'];
+                $compareFilter = " (`{$filterColumnName}`) $filterCompareOperator '$filterValue' ";
+                $compareFilter = $where ? " AND " . $compareFilter : " WHERE " . $compareFilter;
+                $where .= $compareFilter;
+            }
+
             $query .= " FROM " . $tablename;
             if($where){
                 $query .= $where;
             }
             $query .= " GROUP BY $select";
+
+            // Sort By and Limit
+            if($sortBy){
+                $sortColumnName = $sortBy['columnName'];
+                $sortType = $sortBy['type'];
+                $query .= " ORDER BY (`$sortColumnName`) $sortType";
+                if(!empty($sortBy['limit'])){
+                    $limit = $sortBy['limit'];
+                    $query .= " LIMIT $limit";
+                }
+            }
 
             // Execute Query
             $data = DB::select($query);
