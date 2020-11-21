@@ -217,7 +217,7 @@ Route::group(['middleware'=>['teamAuthentication']],function(){
 	
 	Route::get('/arithmetic','metric\MetricDataController@arithmetic')->name('metricdata.arithmetic');
 	Route::get('/comparison','metric\MetricDataController@comparisonFilter')->name('metricdata.comparator');
-	 Route::get('/cordinate-filter','metric\MetricDataController@cordinateFilter')->name('metricdata.cordinate');
+	Route::get('/cordinate-filter','metric\MetricDataController@cordinateFilter')->name('metricdata.cordinate');
 	Route::get('/all-data','metric\MetricDataController@AllMetricData')->name('metricdata.all');
 
 });

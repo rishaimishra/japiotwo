@@ -195,37 +195,70 @@ class MetricDataController extends Controller
             dd('Please login first');
     }
 
-    public function cordinateFilter(Request $r)
+    public function cordinateFilter(Request $request)
     {
-        if (Auth::check()) {
-            // $formattedData = TransformDataHelper::filter($r);
-           
-            if ($r->cname=="Close Date" || $r->cname=="Created Date") {
-
-                $operator = $r->operation;
-                 $auth_id = Auth::user()->id;
-                 $tablename = "temp_metricbuilder_" . $auth_id . "_" . $r->dataset_id;
-
-                $users = DB::select("select  $r->time(`$r->cname`) as c_date , ". $operator ."(`$r->column`) as id FROM ". $tablename ." GROUP BY $r->time(`$r->cname`)");
-                   
-               return response()->json($users, 201);
-
-                    
-               
-            }else{
-              
-                $operator = $r->operation;
-                 $auth_id = Auth::user()->id;
-                 $tablename = "temp_metricbuilder_" . $auth_id . "_" . $r->dataset_id;
-
-                $users = DB::select("select ". $operator ."(`$r->column`) as id, `$r->cname` FROM ". $tablename ." GROUP BY `$r->cname`");
-                   
-               return response()->json($users, 201);
-               
+        try {
+            if (!Auth::check()) {
+                throw new \Exception("Please login first.", 401);
             }
 
-         } else
-             dd('Please login first');
+            $datasetId = $request->datasetId;
+            $xAxisData = $request->xAxisData;
+            $yAxisData = $request->yAxisData;
+            $dateRange = $request->dateRange;
+            // $formattedData = TransformDataHelper::filter($r);
+            $authId = Auth::user()->id;
+            // $authId = 13;
+
+            $tablename = "temp_metricbuilder_" . $authId . "_" . $datasetId;
+            $xAxisColumnName = $xAxisData['columnName'];
+            $xAxisTime = !empty($xAxisData['time']) ? $xAxisData['time'] : null;
+
+            $query = "";
+            $where = "";
+            if ($xAxisColumnName == "Close Date" || $xAxisColumnName == "Created Date") {
+                // $users = DB::select("select  $request->time(`$request->cname`) as c_date , ". $operator ."(`$request->column`) as id FROM ". $tablename ." GROUP BY $request->time(`$request->cname`)");
+                $select = "$xAxisTime(`$xAxisColumnName`)";
+                $query .= "SELECT $select as c_date";
+
+            } else {
+                // $users = DB::select("select ". $operator ."(`$request->column`) as id, `$request->cname` FROM ". $tablename ." GROUP BY `$request->cname`");
+                $select = "`$xAxisColumnName`";
+                $query .= "SELECT $select";
+                
+            }
+
+            // Y-Axis Request Query Management
+            if(!empty($yAxisData)){
+                foreach($yAxisData as $item){
+                    $operator = strtoupper($item['operator']);
+                    $column = $item['columnName'];
+                    $columnName = preg_replace("/\s+/", "_", $column) . "_" . $operator;
+                    $query .= ", " . $operator ."(`$column`) as " . strtolower($columnName);
+                }
+            }
+            
+            // Date Range Filter
+            if($dateRange){
+                $compareDate = \Carbon\Carbon::today()->subDays($dateRange['days'])->format('Y-m-d');
+                $dateRangeFilter = " (`{$dateRange['columnName']}`) >= '$compareDate' ";
+                $where .= " WHERE $dateRangeFilter ";
+            }
+
+            $query .= " FROM " . $tablename;
+            if($where){
+                $query .= $where;
+            }
+            $query .= " GROUP BY $select";
+
+            // Execute Query
+            $data = DB::select($query);
+
+            return response()->json(['error' => false, 'data' => $data], 200);
+
+        } catch(\Exception $ex) {
+            return response()->json(['error' => true, 'message' => $ex->getMessage()], $ex->getCode() ? $ex->getCode() : 500);
+        }        
     }
     public function filterData(Request $r)
     {
