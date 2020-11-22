@@ -221,7 +221,7 @@ class MetricDataController extends Controller
             if ($xAxisColumnName == "Close Date" || $xAxisColumnName == "Created Date") {
                 // $users = DB::select("select  $request->time(`$request->cname`) as c_date , ". $operator ."(`$request->column`) as id FROM ". $tablename ." GROUP BY $request->time(`$request->cname`)");
                 $select = "$xAxisTime(`$xAxisColumnName`)";
-                $query .= "SELECT $select as c_date";
+                $query .= "SELECT $select as c_date, (`$xAxisColumnName`) as c_date_formatted ";
 
             } else {
                 // $users = DB::select("select ". $operator ."(`$request->column`) as id, `$request->cname` FROM ". $tablename ." GROUP BY `$request->cname`");
