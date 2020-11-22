@@ -226,7 +226,7 @@ class MetricDataController extends Controller
             } else {
                 // $users = DB::select("select ". $operator ."(`$request->column`) as id, `$request->cname` FROM ". $tablename ." GROUP BY `$request->cname`");
                 $select = "`$xAxisColumnName`";
-                $query .= "SELECT $select";
+                $query .= "SELECT $select, NULL as c_date";
                 
             }
 
