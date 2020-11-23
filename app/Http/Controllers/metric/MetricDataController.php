@@ -248,13 +248,15 @@ class MetricDataController extends Controller
             }
 
             // Filter
-            if($filter){
-                $filterValue = $filter['value'];
-                $filterColumnName = $filter['columnName'];
-                $filterCompareOperator = $filter['compareOperator'];
-                $compareFilter = " (`{$filterColumnName}`) $filterCompareOperator '$filterValue' ";
-                $compareFilter = $where ? " AND " . $compareFilter : " WHERE " . $compareFilter;
-                $where .= $compareFilter;
+            if(!empty($filter)){
+                foreach($filter as $item){
+                    $filterValue = $item['value'];
+                    $filterColumnName = $item['columnName'];
+                    $filterCompareOperator = $item['compareOperator'];
+                    $compareFilter = " (`{$filterColumnName}`) $filterCompareOperator '$filterValue' ";
+                    $compareFilter = $where ? " AND " . $compareFilter : " WHERE " . $compareFilter;
+                    $where .= $compareFilter;
+                }
             }
 
             $query .= " FROM " . $tablename;
