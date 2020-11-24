@@ -206,6 +206,7 @@ class MetricDataController extends Controller
             $xAxisData = $request->xAxisData;
             $yAxisData = $request->yAxisData;
             $dateRange = $request->dateRange;
+            $sliceBy = $request->sliceBy;
             $filter = $request->filter;
             $sortBy = $request->sortBy;
             // $formattedData = TransformDataHelper::filter($r);
@@ -218,10 +219,21 @@ class MetricDataController extends Controller
 
             $query = "";
             $where = "";
+            $sliceQuery = "";
             if ($xAxisColumnName == "Close Date" || $xAxisColumnName == "Created Date") {
                 // $users = DB::select("select  $request->time(`$request->cname`) as c_date , ". $operator ."(`$request->column`) as id FROM ". $tablename ." GROUP BY $request->time(`$request->cname`)");
                 $select = "$xAxisTime(`$xAxisColumnName`)";
                 $query .= "SELECT $select as c_date, (`$xAxisColumnName`) as c_date_formatted ";
+
+                if($sliceBy){
+                    $sliceQuery .= "SELECT (`$sliceBy`), 
+                                        COUNT(`$sliceBy`) as count, 
+                                        MONTH(`$xAxisColumnName`) as month, 
+                                        YEAR(`$xAxisColumnName`) as year, 
+                                        (`$xAxisColumnName`)
+                                        FROM $tablename 
+                                        GROUP BY $xAxisTime(`$xAxisColumnName`) ORDER BY (`$xAxisColumnName`) ASC";
+                }
 
             } else {
                 // $users = DB::select("select ". $operator ."(`$request->column`) as id, `$request->cname` FROM ". $tablename ." GROUP BY `$request->cname`");
@@ -275,9 +287,13 @@ class MetricDataController extends Controller
                     $query .= " LIMIT $limit";
                 }
             }
-
+            
             // Execute Query
             $data = DB::select($query);
+            if($sliceQuery){
+                $sliceData = DB::select($sliceQuery);
+                $data['sliceBy'] = $sliceData;
+            }
 
             return response()->json(['error' => false, 'data' => $data], 200);
 

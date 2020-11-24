@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <meta charset="utf-8">
@@ -37,14 +35,14 @@
             <ul class="nav metismenu" id="side-menu">
                <li class="chart-div" style="padding: 10px;">
                   <!-- <a> -->
-                  <div class="">
+                  <!-- <div class="">
                      <div class="form-group">
                         <input type="text" class="form-control chart-title" id="chart-title" aria-describedby="chart-title" placeholder="Click to add a title">
                      </div>
                      <div class="form-group">
                         <input type="text" class="form-control chart-description" id="chart-description" aria-describedby="chart-description" placeholder="Click to add a description">
                      </div>
-                  </div>
+                  </div> -->
                   <div>
                      <div class="form-group">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeChart">
@@ -483,13 +481,13 @@
                <label for="date-range">Display date range</label>
                <div class="dropdown dropdown-axis">
                   <button type="button" class="btn btn-light dropdown-toggle" id="daterange_filter" data-toggle="dropdown">
-                  <span>Choose..</span>
+                  <span>Display All Data</span>
                   <span><i class="fa fa-chevron-down svg1"></i></span>
                   </button>
-                  <div id="filterList635214" class="dropdown-menu dropdown-menu-right date-range-dropdown" aria-labelledby="bubbleChart1">
-                     <input type="text" class="form-control"
-                     onkeyup="filterSearchList(635214, this)" placeholder="search">
-                     <a href="#" onclick="daterange_filter('Display All Data')">Display All Data</a>
+                  <div class="dropdown-menu dropdown-menu-right date-range-dropdown 
+                  seach-filter-list-div" aria-labelledby="daterange_filter">
+                     <input type="text" class="form-control search-input1" placeholder="search">
+                     <a href="#" onclick="daterange_filter('Display All Data')" class="d-block selected">Display All Data</a>
                      <h5>Day</h5>
                      <div class="dropdown-divider"></div>
                      <a href="#" onclick="daterange_filter('Current Day','1')">Current Day</a>
@@ -537,15 +535,12 @@
             <div class="form-group">
                <label for="date-range">What date column do you want to use?</label>
                <div class="dropdown dropdown-axis">
-                  <button type="button" class="btn btn-light dropdown-toggle" id="bubbleChart1" data-toggle="dropdown">
-                  <span>Close Date</span>
+                  <button type="button" class="btn btn-light dropdown-toggle" id="daterange_col" data-toggle="dropdown">
+                  <span>Choose..</span>
                   <span><i class="fa fa-chevron-down svg1"></i></span>
                   </button>
-                  <div id="daterange_date"  class="dropdown-menu dropdown-menu-right date-range-dropdown" aria-labelledby="bubbleChart1">
-                     <input type="text" class="form-control"
-                     onkeyup="filterSearchList(5833212, this)" placeholder="search">
-                     <a href="#">Close Date</a>
-                     <a href="#">Created Date</a>
+                  <div class="dropdown-menu dropdown-menu-right seach-filter-list-div date-range-dropdown" id="daterange_op" aria-labelledby="daterange_col">
+                     <input type="text" class="form-control search-input1" placeholder="search">
                   </div>
                </div>
             </div>
@@ -564,69 +559,7 @@
    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#sidePanel1">
      <div class="card-body">
         <div class="dynamic-axis-append y-axis-parent-div" id="filter-dd">
-           <div class="d-flex justify-content-between axis-append-div filter-dropdown-div">
-              <button class="btn btn-light filter-dropdown-btn">
-                 <span>
-                    <!-- column name -->
-                    Id
-                    <!-- the filter -->
-                    is less than 5
-                 </span>
-                 <span><i class="fa fa-chevron-down svg1"></i></span>
-              </button>
-              <div class="filter-drop-card dropdown-menu">
-                 <div class="dropdown">
-                    <button type="button" class="btn btn-light dropdown-toggle filter-d-c-btn" id="filterDropdownMain1" data-toggle="dropdown" aria-expanded="false">
-                    <span>Choose...</span>
-                    <span><i class="fa fa-chevron-down svg1"></i></span>
-                    </button>
-                    <div id="filterList12035" class="dropdown-menu dropdown-menu-right" aria-labelledby="filterDropdownMain1">
-                       <div class="form-group">
-                          <input type="text" onkeyup="filterSearchList(12035, this)" class="form-control search-input-mb" placeholder="search">
-                       </div>
-                       <a href="#" class="drow-item1 selected">ID</a>
-                       <a href="#" class="drow-item1">Deal Name</a>
-                       <a href="#" class="drow-item1">Close Date</a>
-                    </div>
-                 </div>
-                 <div class="dropdown">
-                    <button type="button" class="btn btn-light dropdown-toggle filter-d-c-btn" id="filterDropdownMain2" data-toggle="dropdown" aria-expanded="false">
-                    <span>operator</span>
-                    <span><i class="fa fa-chevron-down svg1"></i></span>
-                    </button>
-                    <div id="filterList656451" class="dropdown-menu dropdown-menu-right" aria-labelledby="filterDropdownMain2">
-                       <div class="form-group">
-                          <input type="text" onkeyup="filterSearchList(656451, this)" class="form-control search-input-mb" placeholder="search">
-                       </div>
-                       <!-- 
-                          op-all => is for NUMBER column
-                          op-str => is for STRING & DATE column
-                        -->
-                       <a href="#" class="drow-item1 op-all op-str">Equals</a>
-                       <a href="#" class="drow-item1 op-all op-str">Does not equal</a>
-                       <a href="#" class="drow-item1 op-all op-str">Contains</a>
-                       <a href="#" class="drow-item1 op-all op-str">Does not contain</a>
-                       <a href="#" class="drow-item1 op-all">Less than</a>
-                       <a href="#" class="drow-item1 op-all">Less than or equal to</a>
-                       <a href="#" class="drow-item1 op-all">Greater than</a>
-                       <a href="#" class="drow-item1 op-all">Greater than or equal to</a>
-                       <a href="#" class="drow-item1 op-all op-str">Is blank</a>
-                       <a href="#" class="drow-item1 op-all op-str">Is not blank</a>
-                       <a href="#" class="drow-item1 op-all op-str">Is one of</a>
-                       <a href="#" class="drow-item1 op-all op-str">Is not one of</a>
-                    </div>
-                 </div>
-                 <div class="form-group">
-                    <input type="text" class="form-control filter-d-c-btn" placeholder="enter your value">
-                 </div>
-                 <button type="button" class="btn btn-sm btn-success filter-submit-btn">filter now</button>
-              </div>
-              <div class="">
-                 <button class="btn btn-white option test" type="button">
-                 <i class="fa fa-trash"></i>
-                 </button>
-              </div>
-           </div>
+          
            <button type="button" class="btn btn-primary btn-sm my-1" onclick="filtervalue_dropdown()">+ Add a filter</button>
         </div>
      </div>
@@ -649,14 +582,12 @@
                <span>Choose...</span>
                <span><i class="fa fa-chevron-down svg1"></i></span>
                </button>
-               <div id="filterList55212" class="dropdown-menu dropdown-menu-right" aria-labelledby="dateCompareDropdown1">
-                  <div class="form-group">
-                     <input type="text" onkeyup="filterSearchList(55212, this)" class="form-control search-input-mb" placeholder="search">
-                  </div>
-                 <a href="#" onclick="set_compare('same period a day before','1')" class="drow-item1 cp_dd com1">same period a day before</a>
-                 <a href="#" onclick="set_compare('same period a week before','2')" class="drow-item1 cp_dd com2">same period a week before</a>
-                 <a href="#" onclick="set_compare('same period a month before','3')" class="drow-item1 cp_dd com3">same period a month before</a>
-                 <a href="#" onclick="set_compare('same period a year before','4')" class="drow-item1 cp_dd com4">same period a year before</a>
+               <div class="dropdown-menu dropdown-menu-right seach-filter-list-div" aria-labelledby="dateCompareDropdown1">
+                  <input type="text" class="form-control search-input-mb search-input1" placeholder="search">
+                 <a href="#" onclick="set_compare('same period a day before','1','1')" class="drow-item1 cp_dd com1">same period a day before</a>
+                 <a href="#" onclick="set_compare('same period a week before','2','7')" class="drow-item1 cp_dd com2">same period a week before</a>
+                 <a href="#" onclick="set_compare('same period a month before','3','30')" class="drow-item1 cp_dd com3">same period a month before</a>
+                 <a href="#" onclick="set_compare('same period a year before','4','360')" class="drow-item1 cp_dd com4">same period a year before</a>
                </div>
              </div>
              <div class="">
@@ -671,97 +602,168 @@
       </div>
     </div>
   </div>
+
+
+
   <div class="card">
-    <div class="card-header" id="headingFive">
-        <button class="btn btn-link btn-header-filter collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+   <div class="card-header" id="headingFive">
+       <button class="btn btn-link btn-header-filter collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+         <span>Slice</span>
+         <i class="fa fa-chevron-right svg1"></i>
+       </button>     
+   </div>
+   <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#sidePanel1">
+     <div class="card-body">
+        <div class="dynamic-axis-append y-axis-parent-div">
+          <div class="d-flex justify-content-between axis-append-div" id="slice_div">
+            <div class="dropdown dropdown-axis">
+              <button type="button" class="btn btn-light dropdown-toggle" id="sliceMetric" data-toggle="dropdown" aria-expanded="false">
+              <span>Choose...</span>
+              <span><i class="fa fa-chevron-down svg1"></i></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right seach-filter-list-div" aria-labelledby="sliceMetric">
+                 <input type="text" class="form-control search-input-mb search-input1" placeholder="search">
+                <a class="drow-item1">Column name 1</a>
+                <a class="drow-item1">Column name 2</a>
+                <a class="drow-item1">Column name 3</a>
+                <a class="drow-item1">Column name 4</a>
+              </div>
+            </div>
+            <div class="">
+              <button class="btn btn-white option test" type="button">
+              <i class="fa fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          <!-- slice list -->
+          <div class="d-block slice-list-div">
+            <div>
+               <button class="btn btn-white bg-slice" type="button" onclick="openColorModal('slice-color-code')" style="    background: #afa;"></button>
+               <p>column item 1</p>
+            </div>
+            <div>
+               <button class="btn btn-white bg-slice" type="button" onclick="openColorModal('slice-color-code')" style="    background: #f50;"></button>
+               <p>column item 2</p>
+            </div>
+          </div>
+          <input type="hidden" value="" id="slice_val">
+          <!-- only one field -->
+          <button type="button" class="btn btn-primary btn-sm my-1" id="slice_btn">+ Add slice</button>
+        </div>
+     </div>
+   </div>
+ </div>
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingSix">
+        <button class="btn btn-link btn-header-filter collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
           <span>Sort & Limit</span>
           <i class="fa fa-chevron-right svg1"></i>
         </button>
       
     </div>
-    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#sidePanel1">
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#sidePanel1">
       <div class="card-body">
-        <input type="text" class="form-control">
+         <p class="mini-label">Sort by</p>
+         <!-- sort data -->
+         <div class="dynamic-axis-append y-axis-parent-div">
+           <div class="d-flex justify-content-between axis-append-div hide" id="sort_div">
+             <div class="dropdown dropdown-axis">
+               <button type="button" class="btn btn-light dropdown-toggle" id="sortMetric" data-toggle="dropdown" aria-expanded="false">
+               <span>Default</span>
+               <span><i class="fa fa-chevron-down svg1"></i></span>
+               </button>
+               <div class="dropdown-menu dropdown-menu-right seach-filter-list-div" aria-labelledby="sortMetric">
+                  <input type="text" class="form-control search-input-mb search-input1" placeholder="search">
+                 <a class="drow-item1 sort" id="sortMetric1" onclick="set_sort_value('1','Default','ASC')">Default</a>
+                 <a class="drow-item1 sort" id="sortMetric2" onclick="set_sort_value('2','Ascending order','ASC')">Ascending order</a>
+                 <a class="drow-item1 sort" id="sortMetric3" onclick="set_sort_value('3','Descending order','DESC')">Descending order</a>
+               </div>
+             </div>
+             <div class="">
+               <button class="btn btn-white option test" type="button">
+               <i class="fa fa-trash"></i>
+               </button>
+             </div>
+           </div>
+           <input type="hidden" value="" id="sort_val">
+           <!-- only one field -->
+           <button type="button" class="btn btn-primary btn-sm my-1" onclick="show_sort()" id="sort_btn">+ Add sort</button>
+         </div>
+         <!-- limit data -->
+         <p class="mini-label">Limit entries</p>
+         <div class="dynamic-axis-append y-axis-parent-div">
+           <div class="d-flex justify-content-between axis-append-div hide" id="limit_div">
+             <div class="dropdown dropdown-axis">
+               <button type="button" class="btn btn-light dropdown-toggle" id="limitMetric" data-toggle="dropdown" aria-expanded="false">
+               <span>Show All</span>
+               <span><i class="fa fa-chevron-down svg1"></i></span>
+               </button>
+               <div class="dropdown-menu dropdown-menu-right seach-filter-list-div" aria-labelledby="limitMetric">
+                  <input type="text" class="form-control search-input-mb search-input1" placeholder="search">
+                 <a class="drow-item1 limit" id="limitMetric1" onclick="set_limit_value('1','Show All','')">Show All</a>
+                 <a class="drow-item1 limit" id="limitMetric2" onclick="set_limit_value('2','Last 10','10')">Last 10</a>
+                 <a class="drow-item1 limit" id="limitMetric3" onclick="set_limit_value('3','Last 25','25')">Last 25</a>
+                 <a class="drow-item1 limit" id="limitMetric4" onclick="set_limit_value('4','Last 50','50')">Last 50</a>
+                 <a class="drow-item1 limit" id="limitMetric5" onclick="set_limit_value('5','Last 100','100')"> Last 100</a>
+                 <a class="drow-item1 limit" id="limitMetric6" onclick="set_limit_value('6','Last 500','500')">Last 500</a>
+                 <a class="drow-item1 limit" id="limitMetric7" onclick="set_limit_value('7','Last 1000','1000')">Last 1000</a>
+               </div>
+             </div>
+             <div class="">
+               <button class="btn btn-white option test" type="button">
+               <i class="fa fa-trash"></i>
+               </button>
+             </div>
+           </div>
+           <input type="hidden" value="" id="limit_val">
+           <!-- only one field -->
+           <button type="button" class="btn btn-primary btn-sm my-1" id="limit_btn" onclick="show_limit()">+ Add Limit value</button>
+         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- acc dropdown filter,slice -->
-<!-- acc dropdown filter,slice -->
-<div class="d-block">
-  <div class="dropdown dropdown-axis">
-    <button type="button" class="btn btn-light dropdown-toggle"
-    id="sortdrop" data-toggle="dropdown">
-      <span>Choose...</span>
-      <span><i class="fa fa-chevron-down svg1"></i></span>
-    </button>
-    <!-- visible on DOM -->
-    <!-- onclick -->
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink1">
-      <input type="text" class="form-control" placeholder="search">
-      <div class="dropdown-divider"></div>
-      <a href="#" class="drow-item1 selected">column 1</a>
-      <a href="#" class="drow-item1">column 2</a>
-      <a href="#" class="drow-item1">column 3</a>
-      <a href="#" class="drow-item1">column 4</a>
-      <a href="#" class="drow-item1">column 5</a>
-      <a href="#" class="drow-item1">column 6</a>
-    </div>
-  </div>
-  <div class="dropdown-divider"></div>
-  <div class="dropdown dropdown-axis">
-    <button type="button" class="btn btn-light dropdown-toggle"
-    id="dropdownMenuLink2" data-toggle="dropdown">
-      <span>Sum</span>
-      <span><i class="fa fa-chevron-down svg1"></i></span>
-    </button>
-    <!-- visible on DOM -->
-    <!-- onclick -->
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink2">
-      <a href="#" class="drow-item1 selected">Sum</a>
-      <a href="#" class="drow-item1">Count</a>
-      <a href="#" class="drow-item1">Average</a>
-      <a href="#" class="drow-item1">Max</a>
-      <a href="#" class="drow-item1">Min</a>
-      <a href="#" class="drow-item1">Median</a>
-    </div>
-  </div>
-</div>
-<!-- acc dropdown filter,slice -->
-<!-- acc dropdown filter,slice -->
+
                </li>
             </ul>
             </div>
       </nav>
       <div id="page-wrapper" class="gray-bg">
-      <div class="row wrapper border-bottom white-bg page-heading">
-      <div class="col-6">
-      <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">
-      <i class="fa fa-edit"></i>
-      <!-- &nbsp; -->
-      DATASET
-      </button>
-      <button type="button" class="btn btn-primary">
-      <i class="fa fa-bar-chart-o"></i>
-      <!-- &nbsp; -->
-      CHART
-      </button>
-      </div>
-      </div>
-      <div class="col-6 text-right">
-      <button type="button" class="btn btn-secondary mr-1">
-      <i class="fa fa-close"></i>
-      <!-- &nbsp; -->
-      Cancle
-      </button>
-      <button type="button" class="btn btn-success">
-      <i class="fa fa-save"></i>
-      <!-- &nbsp; -->
-      Save
-      </button>
-      </div>
-      </div>
+         <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-3">
+               <div class="btn-group top-btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary btn-sm">
+                  <i class="fa fa-edit"></i>
+                  <!-- &nbsp; -->
+                  DATASET
+                  </button>
+                  <button type="button" class="btn btn-primary btn-sm">
+                  <i class="fa fa-bar-chart-o"></i>
+                  <!-- &nbsp; -->
+                  CHART
+                  </button>
+               </div>
+            </div>
+            <div class="col-6 title-des-div">
+               <input type="text" class="form-control chart-title" id="chart-title" aria-describedby="chart-title" placeholder="Click to add a title">
+               <input type="text" class="form-control chart-description" id="chart-description" aria-describedby="chart-description" placeholder="Click to add a description">
+            </div>
+            <div class="col-3 text-right top-btn-group">
+               <button type="button" class="btn btn-secondary mr-1">
+               <i class="fa fa-close"></i>
+               <!-- &nbsp; -->
+               Cancle
+               </button>
+               <button type="button" class="btn btn-success">
+               <i class="fa fa-save"></i>
+               <!-- &nbsp; -->
+               Save
+               </button>
+            </div>
+            </div>
       <div class="row" id="key_value_show">
        
       </div>
@@ -841,57 +843,12 @@
       </div>
       </div>
       </div>
-<!-- filter list -->
-<!-- filter list -->
-<!-- filter list -->
-<!-- filter list -->
-<div class="date-range all">
-  <div class="form-group">
-     <label for="date-range">Date range (by)</label>
-     <div class="dropdown dropdown-axis">
-        <button type="button" class="btn btn-light dropdown-toggle" id="bubbleChart1" data-toggle="dropdown">
-        <span>Last 3 Month</span>
-        <span><i class="fa fa-chevron-down svg1"></i></span>
-        </button>
-        <!-- below id will be dynamic for all dropdowns -->
-        <div id="filterList1" class="dropdown-menu dropdown-menu-right" aria-labelledby="bubbleChart1">
-          <!-- inline function will have dynamic filterSearchList parameters -->
-           <input type="text" class="search-box" placeholder="search" onkeyup="filterSearchList(1, this)">
-           <h5>Day</h5>
-           <div class="dropdown-divider"></div>
-           <a href="#" class="drow-item1">yesterday</a>
-           <a href="#" class="drow-item1">Last week</a>
-           <a href="#" class="drow-item1">Last 3 week</a>
-           <a href="#" class="drow-item1">Last 6 week</a>
-           <a href="#" class="drow-item1">Last 9 week</a>
-           <a href="#" class="drow-item1">Last 12 week</a>
-           <a href="#" class="drow-item1">Last 27 week</a>
-           <a href="#" class="drow-item1">Last 54 week</a>
-           <h5>Day</h5>
-           <div class="dropdown-divider"></div>
-           <a href="#" class="drow-item1">yesterday</a>
-           <a href="#" class="drow-item1">Last week</a>
-           <a href="#" class="drow-item1">Last 3 week</a>
-           <a href="#" class="drow-item1">Last 6 week</a>
-           <a href="#" class="drow-item1">Last 9 week</a>
-           <a href="#" class="drow-item1">Last 12 week</a>
-           <a href="#" class="drow-item1">Last 27 week</a>
-           <a href="#" class="drow-item1">Last 54 week</a>
-        </div>
-     </div>
-  </div>
-</div>
-<!-- filter list -->
-<!-- filter list -->
-<!-- filter list -->
-<!-- filter list -->
       <!-- Mainly scripts -->
 <script src="{{asset('assets-builder/js/jquery-3.1.1.min.js')}}"></script>
 <script src="{{asset('assets-builder/js/popper.min.js')}}"></script>
 <script src="{{asset('assets-builder/js/bootstrap.js')}}"></script>
 <script src="{{asset('assets-builder/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 <script src="{{asset('assets-builder/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-
 <!-- Custom and plugin javascript -->
 <script src="{{asset('assets-builder/js/inspinia.js')}}"></script>
 <script src="{{asset('assets-builder/js/plugins/pace/pace.min.js')}}"></script>
@@ -902,7 +859,20 @@
 <script src="{{asset('assets-builder/js/demo/new-page.chart.js')}}"></script>
 <!-- <script src="{{asset('assets-builder/js/demo/moment.js')}}"></script> -->
 <!-- Modal -->
+
       <!-- Modal -->
+<style>
+#changeChart input{
+   position: absolute;
+   top: -99999px;
+   left: -99999px;
+   opacity: 0;
+}
+.modal-body div {
+    display: inline-block;
+    margin: 4px 10px 4px;
+}
+</style>
       <div class="modal fade" id="changeChart" tabindex="-1" role="dialog" aria-labelledby="changeChartLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
            <div class="modal-content">
@@ -915,43 +885,43 @@
               <div class="modal-body">
                  <div class="">
                     <input class="form-check-input" type="radio" onclick="setchartype('bar','ColumnChart')" name="chartType" id="chartType1" value="option1" checked>
-                    <label class="form-check-label" for="chartType1">COLUMN CHART</label>
+                    <label class="form-check-label btn btn-primary" for="chartType1">COLUMN CHART</label>
                  </div>
                  <div class="">
                     <input class="form-check-input" type="radio" onclick="setchartype('bar','BarChart')" name="chartType" id="chartType2" value="option2">
-                    <label class="form-check-label" for="chartType2">BAR CHART</label>
+                    <label class="form-check-label btn btn-primary" for="chartType2">BAR CHART</label>
                  </div>
                  <div class="">
                     <input class="form-check-input" type="radio" onclick="setchartype('line','LineChart')" name="chartType" id="chartType3" value="option3">
-                    <label class="form-check-label" for="chartType3">LINE CHART</label>
+                    <label class="form-check-label btn btn-primary" for="chartType3">LINE CHART</label>
                  </div>
                  <div class="">
                     <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','Donut')" id="chartType4" value="option4">
-                    <label class="form-check-label" for="chartType4">DONUT CHART</label>
+                    <label class="form-check-label btn btn-primary" for="chartType4">DONUT CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','AreaChart')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">AREA CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','AreaChart')" id="chartType5" value="option5">
+                    <label class="form-check-label btn btn-primary" for="chartType5">AREA CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','PieChart')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">PIE CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','PieChart')" id="chartType6" value="option6">
+                    <label class="form-check-label btn btn-primary" for="chartType6">PIE CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','Stack')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">STACK CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setchartype('corechart','Stack')" id="chartType7" value="option7">
+                    <label class="form-check-label btn btn-primary" for="chartType7">STACK CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setBubbleChart('corechart','BubbleChart')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">BUBBLE CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setBubbleChart('corechart','BubbleChart')" id="chartType8" value="option8">
+                    <label class="form-check-label btn btn-primary" for="chartType8">BUBBLE CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setTableChart('table','Table')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">TABLE CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setTableChart('table','Table')" id="chartType9" value="option9">
+                    <label class="form-check-label btn btn-primary" for="chartType9">TABLE CHART</label>
                  </div>
                  <div class="">
-                    <input class="form-check-input" type="radio" name="chartType" onclick="setGaugeChart('gauge','Gauge')" id="chartType5" value="option4">
-                    <label class="form-check-label" for="chartType5">GAUGE CHART</label>
+                    <input class="form-check-input" type="radio" name="chartType" onclick="setGaugeChart('gauge','Gauge')" id="chartType10" value="option10">
+                    <label class="form-check-label btn btn-primary" for="chartType10">GAUGE CHART</label>
                  </div>
               </div>
               <div class="modal-footer">
@@ -1024,10 +994,9 @@
          }
      </script>
     
-    <script>
+<script>
 $('body').on('click', '.filter-dropdown-btn', function() {
   $(this).nextAll('.filter-drop-card').show();
-  console.log('Hello World');
 });
 $('body').on('click', '.filter-submit-btn', function() {
   $(this).parent('.filter-drop-card').hide()
